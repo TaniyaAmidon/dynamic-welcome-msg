@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome Message using JS</title>
+    </head>
+
+    <body>
+
+    </body>
+
+    <script>
+        //calling the body from HTML
+        let getBody = document.body;
+
+        //creating an element to insert to HTML body
+        let newElement = document.createElement("h1");
+
+        let date = new Date();
+        let currentHour = date.getHours();
+
+        //conditional statement for the message 
+        let createTextMsg;
+
+        if(currentHour >= 4 && currentHour < 10 ){
+            createTextMsg = "Good Morning!";
+        } else if (currentHour >= 10 && currentHour < 12) {
+            createTextMsg = "Good Day!";
+        } else if (currentHour >= 12 && currentHour < 18) {
+            createTextMsg = "Good Afternoon!";
+        } else if (currentHour >= 18 && currentHour < 22) {
+            createTextMsg = "Good Evening!";
+        } else if (currentHour >= 22 && currentHour < 4) {
+            createTextMsg = "Good Night!";
+        } else {
+            createTextMsg = "Are you from a different planet! :o";
+        }
+        
+        //create txt node
+        let createEleText = document.createTextNode(createTextMsg);
+
+        //insert the txt node to newElement
+        newElement.appendChild(createEleText);
+
+        //insert the newElement in to body
+        getBody.appendChild(newElement);
+
+        //creating a class to style h1 tag 
+        newElement.setAttribute("class", "welcome");
+        newElement.style.cssText = "text-align: center; font-size: 60px; font-family: Arial;"
+
+
+    </script>
+
+    
+
+</html>
